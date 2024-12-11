@@ -4,6 +4,7 @@ import Navbar from "./navbar";
 import Card from "./pokemon-cards/card";
 import { pokemons as pokemonsList } from "../pokemons";
 import { Pokemon, PokemonType } from "../pokemons/types";
+import "./main-page.css";
 
 const MainPage: React.FC = () => {
 	const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -22,7 +23,7 @@ const MainPage: React.FC = () => {
 		<div>
 			<Header />
 			<Navbar onTypeSelect={handleTypeSelect} />
-			<main style={styles.main}>
+			<main className="main-page-container" style={styles.main}>
 				{selectedType ? (
 					<h2 style={styles.heading}>Tipo Seleccionado: {selectedType}</h2>
 				) : (

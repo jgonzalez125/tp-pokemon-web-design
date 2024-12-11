@@ -1,4 +1,10 @@
-export type PokemonType = "fire" | "water" | "grass" | "electric" | "normal";
+export type PokemonType =
+	| "fire"
+	| "water"
+	| "grass"
+	| "electric"
+	| "normal"
+	| "legendary";
 
 export interface Pokemon {
 	id: number;

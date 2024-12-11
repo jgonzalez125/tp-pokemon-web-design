@@ -1,0 +1,11 @@
+.main-page-container {
+  background-image: url('../images/pokeballs.jpg');
+  background-size:contain;
+}
+
+h2 {
+  background-color: #f5f5f5;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 5px;
+}

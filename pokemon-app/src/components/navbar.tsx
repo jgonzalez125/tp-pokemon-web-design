@@ -1,5 +1,6 @@
 import React from "react";
 import { PokemonType } from "../pokemons/types";
+import "./navbar.css";
 
 interface NavbarProps {
 	onTypeSelect: (type: PokemonType | null) => void;
@@ -11,6 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ onTypeSelect }) => {
 		"water",
 		"grass",
 		"electric",
+		"legendary",
 		"normal",
 	] as PokemonType[];
 
@@ -18,6 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ onTypeSelect }) => {
 		<nav style={styles.nav}>
 			{types.map((type) => (
 				<button
+					className="types-button"
 					key={type}
 					style={styles.button}
 					onClick={() => onTypeSelect(type)}>
@@ -36,8 +39,9 @@ const styles = {
 		display: "flex",
 		justifyContent: "center",
 		backgroundColor: "#f4f4f4",
-		padding: "10px 0",
+		padding: "10px",
 		borderBottom: "1px solid #ddd",
+		flexWrap: "wrap" as const,
 	},
 	button: {
 		margin: "0 10px",
@@ -50,6 +54,9 @@ const styles = {
 		cursor: "pointer",
 		textTransform: "capitalize" as const,
 		transition: "background-color 0.3s",
+		active: {
+			backgroundColor: "#d0d0d0",
+		},
 	},
 	buttonHover: {
 		backgroundColor: "#d0d0d0",

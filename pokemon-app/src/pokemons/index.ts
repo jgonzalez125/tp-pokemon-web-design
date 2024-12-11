@@ -163,4 +163,49 @@ export const pokemons: Pokemon[] = [
 		description:
 			"Este Pokémon está lleno de vitalidad. Constantemente vuela alrededor de su gran territorio en busca de presas.",
 	},
+	{
+		id: 144,
+		name: "Articuno",
+		type: "legendary",
+		image: "https://www.serebii.net/pokemongo/pokemon/144.png",
+		hp: 90,
+		description:
+			"Un Pokémon pájaro legendario. Se dice que aparece a las personas condenadas que están perdidas en montañas heladas.",
+	},
+	{
+		id: 145,
+		name: "Zapdos",
+		type: "legendary",
+		image: "https://www.serebii.net/pokemongo/pokemon/145.png",
+		hp: 90,
+		description:
+			"Un Pokémon pájaro legendario que se dice que aparece de las nubes mientras lanza enormes rayos.",
+	},
+	{
+		id: 146,
+		name: "Moltres",
+		type: "legendary",
+		image: "https://www.serebii.net/pokemongo/pokemon/146.png",
+		hp: 90,
+		description:
+			"Un Pokémon pájaro legendario. Se dice que migra desde el sur junto con la primavera.",
+	},
+	{
+		id: 150,
+		name: "Mewtwo",
+		type: "legendary",
+		image: "https://www.serebii.net/pokemongo/pokemon/150.png",
+		hp: 106,
+		description:
+			"Un Pokémon creado recombinando los genes de Mew. Se dice que es el Pokémon más salvaje.",
+	},
+	{
+		id: 151,
+		name: "Mew",
+		type: "legendary",
+		image: "https://www.serebii.net/pokemongo/pokemon/151.png",
+		hp: 100,
+		description:
+			"Tan raro que todavía se dice que es un espejismo por muchos expertos. Solo unas pocas personas lo han visto en todo el mundo.",
+	},
 ];
