@@ -80,6 +80,12 @@
   align-items: center;
 }
 
+.ReactModal__Content .evolution:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s;
+}
+
+
 .ReactModal__Content .evolution img {
   max-width: 80px;
   margin-bottom: 5px;
