@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tp-pokemon-web-design/static/css/main.8d9c061e.css",
+    "main.css": "/tp-pokemon-web-design/static/css/main.94caab25.css",
     "main.js": "/tp-pokemon-web-design/static/js/main.a1386e7b.js",
     "static/js/453.c09a555b.chunk.js": "/tp-pokemon-web-design/static/js/453.c09a555b.chunk.js",
     "static/media/pokemon-logo.png": "/tp-pokemon-web-design/static/media/pokemon-logo.4fd9e06ae27a80a40e94.png",
     "static/media/pokeballs.jpg": "/tp-pokemon-web-design/static/media/pokeballs.60455cef0d7a5758ce21.jpg",
     "index.html": "/tp-pokemon-web-design/index.html",
-    "main.8d9c061e.css.map": "/tp-pokemon-web-design/static/css/main.8d9c061e.css.map",
+    "main.94caab25.css.map": "/tp-pokemon-web-design/static/css/main.94caab25.css.map",
     "main.a1386e7b.js.map": "/tp-pokemon-web-design/static/js/main.a1386e7b.js.map",
     "453.c09a555b.chunk.js.map": "/tp-pokemon-web-design/static/js/453.c09a555b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d9c061e.css",
+    "static/css/main.94caab25.css",
     "static/js/main.a1386e7b.js"
   ]
 }
