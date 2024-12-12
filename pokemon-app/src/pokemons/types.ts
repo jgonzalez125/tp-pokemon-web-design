@@ -6,6 +6,11 @@ export type PokemonType =
 	| "normal"
 	| "legendary";
 
+export interface Evolution {
+	image: string;
+	name: string;
+}
+
 export interface Pokemon {
 	id: number;
 	name: string;
@@ -13,4 +18,5 @@ export interface Pokemon {
 	image: string;
 	hp: number;
 	description: string;
+	evolutions: Evolution[];
 }

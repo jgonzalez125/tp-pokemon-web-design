@@ -7,7 +7,7 @@ import { Pokemon, PokemonType } from "../pokemons/types";
 import "./main-page.css";
 
 const MainPage: React.FC = () => {
-	const [selectedType, setSelectedType] = useState<string | null>(null);
+	const [selectedType, setSelectedType] = useState<PokemonType | null>(null);
 	const [pokemons, setPokemons] = useState<Pokemon[]>(pokemonsList);
 
 	const handleTypeSelect = (type: PokemonType | null) => {
@@ -22,7 +22,7 @@ const MainPage: React.FC = () => {
 	return (
 		<div>
 			<Header />
-			<Navbar onTypeSelect={handleTypeSelect} />
+			<Navbar onTypeSelect={handleTypeSelect} selectedType={selectedType} />
 			<main className="main-page-container" style={styles.main}>
 				{selectedType ? (
 					<h2 style={styles.heading}>Tipo Seleccionado: {selectedType}</h2>
@@ -32,6 +32,8 @@ const MainPage: React.FC = () => {
 				<div style={styles.cardsContainer}>
 					{pokemons.map((pokemon) => (
 						<Card
+							key={pokemon.id}
+							evolutions={pokemon.evolutions}
 							id={pokemon.id}
 							name={pokemon.name}
 							url={pokemon.image}

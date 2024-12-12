@@ -1,9 +1,12 @@
 import React from "react";
-import { PokemonType } from "../../pokemons/types";
+import { Evolution, PokemonType } from "../../pokemons/types";
+import Modal from "react-modal";
+import "./styles.css";
 
 interface PokemonCardProps {
 	name: string;
 	id: number;
+	evolutions: Evolution[];
 	url: string;
 	hp: number;
 	type: PokemonType;
@@ -14,12 +17,36 @@ const Card: React.FC<PokemonCardProps> = ({
 	id,
 	name,
 	type,
+	evolutions,
 	hp,
 	description,
 	url,
 }) => {
+	const [isModalOpen, setIsModalOpen] = React.useState(false);
+	const openModal = () => setIsModalOpen(true);
+	const closeModal = (e: React.MouseEvent | React.KeyboardEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
+		setIsModalOpen(false);
+	};
+
+	const renderEvolutions = () => {
+		if (evolutions.length === 0) {
+			return <p>Este Pokemon no tiene evoluciones</p>;
+		}
+		return evolutions.map((evolution) => (
+			<div key={evolution.name} className="evolution">
+				<img src={evolution.image} alt={evolution.name} />
+				<span>{evolution.name}</span>
+			</div>
+		));
+	};
+
 	return (
-		<div style={getCardStyles().card}>
+		<div
+			onClick={openModal}
+			className="pokemon-card"
+			style={getCardStyles().card}>
 			<img
 				src={url || "https://via.placeholder.com/150"}
 				alt={name}
@@ -30,6 +57,30 @@ const Card: React.FC<PokemonCardProps> = ({
 				<h3 style={getCardStyles().name}>{name}</h3>
 				<div style={getCardStyles(type).type}>{type}</div>
 			</div>
+			{isModalOpen && (
+				<Modal
+					isOpen={isModalOpen}
+					onRequestClose={(e) => closeModal(e)}
+					style={modalStyles}>
+					<h1>{name}</h1>
+					<img src={url} alt={name} />
+					<p>
+						<strong>ID:</strong> {id}
+					</p>
+					<p>
+						<strong>HP:</strong> {hp}
+					</p>
+					<p>
+						<strong>Tipo:</strong> {type}
+					</p>
+					<p>
+						<strong>Descripción:</strong> {description}
+					</p>
+					<h1>Evoluciones</h1>
+					<div className="evolutions">{renderEvolutions()}</div>
+					<button onClick={closeModal}>Cerrar</button>
+				</Modal>
+			)}
 		</div>
 	);
 };
@@ -46,6 +97,8 @@ const getTypeBackgroundColor = (type?: PokemonType) => {
 			return "#f8d030";
 		case "normal":
 			return "#a8a878";
+		case "legendary":
+			return "#a040a0";
 		default:
 			return "#a8a878";
 	}
@@ -61,7 +114,7 @@ const getCardStyles = (type?: PokemonType) => {
 			boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
 			fontFamily: "Arial, sans-serif",
 			textAlign: "center" as const,
-			backgroundColor: "#fff",
+			backgroundColor: "#e4e4e4",
 		},
 		image: {
 			width: "100%",
@@ -94,6 +147,21 @@ const getCardStyles = (type?: PokemonType) => {
 		},
 	};
 	return styles;
+};
+
+const modalStyles = {
+	content: {
+		top: "50%",
+		left: "50%",
+		right: "auto",
+		bottom: "auto",
+		marginRight: "-50%",
+		transform: "translate(-50%, -50%)",
+		borderRadius: "8px",
+		padding: "20px",
+		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+		fontFamily: "Arial, sans-serif",
+	},
 };
 
 export default Card;

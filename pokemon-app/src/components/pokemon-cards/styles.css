@@ -3,3 +3,130 @@
   transition: transform 0.3s;
   cursor: pointer;
 }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.ReactModal__Content {
+  background: rgb(229, 144, 7);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  width: 90%; 
+  max-width: 400px; 
+  overflow-y: auto; 
+  max-height: 90%;
+}
+
+.ReactModal__Content h1 {
+  max-width: 100%; 
+  height: auto; 
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.ReactModal__Content img {
+  max-width: 150px;
+  margin: 15px auto;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+}
+
+.ReactModal__Content p {
+  font-size: 20px;
+  color: #555555;
+  margin: 5px 0;
+}
+
+.ReactModal__Content button {
+  margin-top: 15px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ReactModal__Content button:hover {
+  background-color: #ff4433;
+}
+
+.ReactModal__Content .evolutions {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 20px;
+  flex-wrap: wrap; 
+}
+
+.ReactModal__Content .evolution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ReactModal__Content .evolution img {
+  max-width: 80px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.ReactModal__Content .evolution span {
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .evolution img {
+    max-width: 60px;
+  }
+
+  .ReactModal__Content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .evolution img {
+    max-width: 50px; 
+  }
+}  
